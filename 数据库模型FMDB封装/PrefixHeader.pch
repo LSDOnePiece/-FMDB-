@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  图文混排和数据库操作
+//
+//  Created by ls on 16/6/17.
+//  Copyright © 2016年 szrd. All rights reserved.
+//
+
+// 保证 #ifdef 中的宏定义只会在 OC 的代码中被引用
+// 否则，一旦引入 C/C++ 的代码或者框架，就会出错！
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define LSDLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define LSDLog(...)
+#endif
+
+#endif
+
